@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const fs = require('fs');
-const { handleMessage } = require('./handles/handleMessage');
+const { handleMessage, setupCommands } = require('./handles/handleMessage');
 const { handlePostback } = require('./handles/handlePostback');
 
 const app = express();
@@ -38,6 +38,8 @@ app.post('/webhook', (req, res) => {
           handlePostback(event, PAGE_ACCESS_TOKEN);
         }
       });
+
+      setupCommands(PAGE_ACCESS_TOKEN);
     });
 
     res.status(200).send('EVENT_RECEIVED');
