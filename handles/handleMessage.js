@@ -42,8 +42,6 @@ async function setupCommands(pageAccessToken) {
   });
 };
 
-setupCommands();
-
 async function handleMessage(event, pageAccessToken) {
   const senderId = event.sender.id;
   const messageText = event.message.text.toLowerCase();
