@@ -60,4 +60,4 @@ async function handleMessage(event, pageAccessToken) {
   }
 }
 
-module.exports = { handleMessage };
+module.exports = { handleMessage, setupCommands };
